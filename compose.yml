@@ -1,0 +1,17 @@
+services:
+  english-app:
+    build: .
+    container_name: english-quiz-system
+    restart: always
+    # 核心：实时挂载。左边是宿主机路径，右边是容器内路径
+    volumes:
+      - .:/app
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - "5000:5000"
+    command: gunicorn -w 4 -b 0.0.0.0:5000 --reload app:app
+    environment:
+      - TZ=Asia/Shanghai
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1

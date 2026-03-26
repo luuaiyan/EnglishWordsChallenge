@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>English Words Challenge - 英语单词挑战</title>
+    
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="英语挑战">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/images/icons/icon-192.png">
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    
+    <div id="loading-overlay">正在同步云端数据...</div>
+
+    <div id="auth-screen" class="screen">
+        <div class="app-container" style="justify-content: center;">
+            <div class="center-card">
+                <h1 id="auth-title" style="color: var(--primary); margin-bottom: 5px;">账号登录</h1>
+                <p id="auth-subtitle" style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px;">欢迎回到每日英语单词学习</p>
+                
+                <div class="input-group">
+                    <input type="text" id="username-input" placeholder="请输入真实姓名" maxlength="10" oninput="hideAuthError()">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password-input" placeholder="请输入密码" maxlength="20" oninput="hideAuthError()">
+                </div>
+                
+                <div id="auth-error-msg" style="color: var(--wrong); font-size: 14px; font-weight: bold; margin-bottom: 10px; display: none;"></div>
+
+                <button class="btn-primary" onclick="submitAuth()" id="auth-btn">立即登录</button>
+                <div style="margin-top: 20px; font-size: 14px; color: var(--text-muted); cursor: pointer; text-decoration: underline;" onclick="toggleAuthMode()" id="auth-toggle-text">第一次来？点击这里注册账号</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard-screen" class="screen">
+        <div class="app-container">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 15px 5px;">
+                <h2 style="margin: 0; color: var(--text-main);">👋 你好, <span id="display-name" style="color: var(--primary);"></span>!</h2>
+                <button id="install-btn" class="btn-primary" style="display: none; padding: 6px 12px; font-size: 13px; width: auto; margin: 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);">保存到桌面</button>
+            </div>
+            
+            <div class="dashboard-module">
+                <div class="module-title">📊 数据概览</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="my-total-qs">0</div>
+                        <div class="stat-label">累计答题数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="my-accuracy">0%</div>
+                        <div class="stat-label">平均正确率</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-module">
+                <div class="module-title">⚙️ 测验设置</div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                    <span style="font-weight: bold; font-size: 15px; color: var(--text-main);">当前学习阶段</span>
+                    <select id="grade-select" onchange="changeGrade()" style="padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 15px; background: var(--bg-color); color: var(--text-main); outline: none;">
+                        <option value="1a">一年级 (上)</option>
+                        <option value="1b">一年级 (下)</option>
+                        <option value="2a">二年级 (上)</option>
+                        <option value="2b">二年级 (下)</option>
+                        <option value="3a">三年级 (上)</option>
+                        <option value="3b">三年级 (下)</option>
+                        <option value="4a">四年级 (上)</option>
+                        <option value="4b">四年级 (下)</option>
+                        <option value="5a">五年级 (上)</option>
+                        <option value="5b">五年级 (下)</option>
+                        <option value="6a">六年级 (上)</option>
+                        <option value="6b">六年级 (下)</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-weight: bold; font-size: 15px; color: var(--text-main);">本次挑战题数</span>
+                    <input type="number" id="question-count" value="20" min="1" max="100" style="width: 70px; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; font-size: 16px; background: var(--bg-color); color: var(--text-main);">
+                </div>
+                <button class="btn-primary" style="margin-top: 20px; width: 100%; border-radius: 12px; font-size: 16px;" onclick="startQuiz('all')">🚀 开始学习</button>
+            </div>
+
+            <div class="dashboard-module">
+                <div class="module-title">
+                    <span>🏆 班级光荣榜</span>
+                    <span style="font-size: 12px; font-weight: normal; color: var(--text-muted);">答满100题上榜</span>
+                </div>
+                <div id="dashboard-leaderboard" class="scroll-list">
+                    <p style="color: var(--text-muted); font-size: 14px; text-align: center;">加载中...</p>
+                </div>
+            </div>
+
+            <div class="dashboard-module">
+                <div class="module-title">
+                    <span>🔥 我的错题本 (<span id="mistake-count">0</span>)</span>
+                    <button id="practice-mistakes-btn" class="btn-secondary" style="width: auto; margin: 0; padding: 4px 10px; font-size: 12px; border-radius: 8px;" onclick="startQuiz('mistakes')">错题攻坚</button>
+                </div>
+                <div id="dashboard-mistakes" class="scroll-list">
+                    <p style="color: var(--text-muted); font-size: 14px; text-align: center;">暂无错题！</p>
+                </div>
+            </div>
+
+            <div class="dashboard-module">
+                <div class="module-title" style="margin-bottom: 10px; border-bottom: none; padding-bottom: 0;">
+                    <span>📅 打卡日历</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                    <span id="cal-month-year" style="font-size: 16px; font-weight: 900; color: var(--text-main);">2026年3月</span>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="icon-btn" onclick="prevMonth()" aria-label="上个月">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+                        </button>
+                        <button class="icon-btn" onclick="nextMonth()" aria-label="下个月">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="cal-header-row">
+                        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+                    </div>
+                    <div id="cal-grid" class="cal-grid">
+                        </div>
+                </div>
+                
+                <div id="daily-stats-display">
+                    👆 点击日期即可查看当天打卡成绩
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; margin-bottom: 30px; width: 100%;">
+                <button class="btn-secondary" style="flex: 1; color: var(--text-muted); border-color: var(--border-color);" onclick="logout()">退出登录</button>
+                <button class="btn-secondary" style="flex: 1; color: var(--wrong); border-color: rgba(239, 68, 68, 0.4);" onclick="clearRecord()">清空记录</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="screen" style="padding: 0;">
+        <div class="app-container" style="padding: 0; max-width: 800px; height: 100vh; height: 100dvh; display: flex; flex-direction: column;">
+            <div style="flex: 1; display: flex; flex-direction: column; padding: 25px 20px 40px 20px; background: var(--bg-color);">
+                
+                <div>
+                    <div id="progress-text" style="font-size: 15px; color: var(--text-muted); font-weight: bold; margin-bottom: 10px; text-align: left; width: 100%;">1 / 20</div>
+                    <div class="progress-wrapper"><div id="progress-bar" class="progress-bar"></div></div>
+                    <div class="timer-wrapper"><div id="timer-bar"></div></div>
+                </div>
+
+                <div id="question-box" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: 100%; margin-bottom: 0;">
+                    <div id="q-word" style="font-size: 44px; font-weight: 900; margin-bottom: 5px; word-wrap: break-word; transition: color 0.3s;"></div>
+                    <div id="q-phonetic" style="font-size: 20px; color: var(--text-muted); font-family: 'Times New Roman', Times, serif; margin-bottom: 15px; height: 24px;"></div>
+                    <div id="q-trans" style="font-size: 24px; font-weight: bold; transition: color 0.3s; padding: 0 10px;"></div>
+                </div>
+
+                <div id="options-container" style="width: 100%; margin-top: auto;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-screen" class="screen">
+        <div class="app-container" style="justify-content: center;">
+            <div class="center-card">
+                <h1 style="margin: 0; font-size: 32px; color: var(--text-main);">测验结束</h1>
+                <h2 id="final-score" style="margin: 15px 0; color: var(--correct); font-size: 38px;">得分: 0 / 20</h2>
+                <p id="saving-status" style="color: var(--text-muted); font-size: 15px; margin-bottom: 35px;">☁️ 正在保存成绩...</p>
+                <button class="btn-primary" onclick="loadDashboard()">返回主页</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="word-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()" id="modal-card">
+            <span class="close-btn" onclick="closeModal(event)">&times;</span>
+            <div id="modal-counter" style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-weight: bold;"></div>
+            
+            <div id="modal-word" style="font-size: 36px; font-weight: 900; color: var(--primary); margin-bottom: 10px; word-wrap: break-word;"></div>
+            <div id="modal-phonetic" style="font-size: 20px; color: var(--text-muted); margin-bottom: 20px;"></div>
+            <div id="modal-trans" style="font-size: 16px; color: var(--text-main); line-height: 1.6; font-weight: bold; word-wrap: break-word;"></div>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 30px; gap: 15px;">
+                <button class="btn-secondary" style="padding: 8px; font-size: 14px; flex: 1;" onclick="prevMistake()">上一个</button>
+                <button class="btn-secondary" style="padding: 8px; font-size: 14px; flex: 1;" onclick="nextMistake()">下一个</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/pwa.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/ui.js"></script>
+    <script src="/assets/js/quiz.js"></script>
+    
+</body>
+</html>
