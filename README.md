@@ -71,7 +71,7 @@
 
 1. 克隆项目
 
- ```
+ ```bash
  git clone https://github.com/luuaiyan/EnglishWordsChallenge.git
  cd EnglishWordsChallenge
  ```
@@ -79,7 +79,7 @@
 2. 一键启动
 确保你的服务器已安装 Docker 和 Docker Compose。在项目根目录下执行：
 
- ```
+ ```bash
  docker compose up -d
  ```
 
