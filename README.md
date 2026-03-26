@@ -71,17 +71,17 @@
 
 1. 克隆项目
 
-```
-git clone https://github.com/luuaiyan/EnglishWordsChallenge.git
-cd EnglishWordsChallenge
-```
+ ```
+ git clone https://github.com/luuaiyan/EnglishWordsChallenge.git
+ cd EnglishWordsChallenge
+ ```
 
 2. 一键启动
 确保你的服务器已安装 Docker 和 Docker Compose。在项目根目录下执行：
 
-```
-docker compose up -d
-```
+ ```
+ docker compose up -d
+ ```
 
 服务启动后，打开浏览器访问 `http://你的服务器IP:5000` 即可开始体验！
 
