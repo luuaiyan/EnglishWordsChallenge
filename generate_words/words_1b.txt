@@ -1,0 +1,408 @@
+about | [ə'baʊt] |prep. 关于 adv. 大约
+afraid | [ə'freɪd] | adj. 害怕的
+after | ['ɑːftəʳ] |prep. 在...之后 adv. 后来，以后
+afternoon | [ˌɑːftə'nuːn] |n. 下午
+again | ['əɡen] |adv. 再次，又一次
+all | [ɔːl] |pron. 全部 adj. 全部的
+also | ['ɔːlsəʊ] |adv. 而且
+amazing | [ə'meɪzɪŋ] |adj. 惊人的，令人吃惊的
+an | [ən] |det. 一个
+and | [ænd] |conj. 和，及，与
+angry | ['æŋɡrɪ] |adj. 生气的，发怒的
+animal | ['ænɪm(ə)l] |n. 动物；四足动物
+answer | ['ɑːnsəʳ] |n. 1.回答；答复 2.答案
+ant | [ænt] |n. 蚂蚁
+any | ['enɪ] |adj. 任何的
+apple | ['æpl] |n. 苹果
+are | [ər,ɑːʳ] |v. 是（be 的第二人称单复数现在式）
+arm | [ɑːm] |n. 1.手臂 2.(椅子的)扶手；臂状物
+around | [ə'raʊnd] |adv. 1.向四周，在周围 2.在附近
+ask | [ɑːsk] |vt. 1.问 2.请求
+at | [ət,æt] |prep. 在…里；在…上
+autumn | ['ɔːtəm] |n. 秋天
+baa | [bɑː] |vi. 咩咩地叫(羊等动物)
+back | [bæk] |n. 1.背；背部 2.后面
+bad | [bæd] |adj. 坏的，不好的
+bag | [bæɡ] |n. 包，袋子
+ball | [bɔːl] |n. 球
+balloon | [bə'luːn] |n. 气球
+basketball | ['bɑːskɪtbɔːl] |n. 篮球
+bean | [biːn] |n. 豆
+beanie | [ˈbiːni] |n. 无檐小便帽
+bear | [beəʳ] |n. 熊
+beautiful | ['bjuːtɪfʊl] |adj. 1.美的，美丽的，漂亮的 2.出色的，令人愉悦的
+bed | [bed] |n. 床
+bedroom | ['bedruːm] |n. 卧室
+bee | [biː] |n. 1.蜜蜂 2.忙碌的人
+before | [bɪ'fɔːʳ] |adv. 1.在前 2.较早
+begin | [bɪ'ɡɪn] |vi. 开始
+behind | [bɪ'haɪnd] |adv. 1.后面，向后面 2.迟，慢，落后
+beside | [bɪ'saɪd] |prep. 1.在…旁，邻近 2.与…相比较
+between | [bɪ'twiːn] |prep. 1.在…之间 2.介于...之间
+bicycle | ['baɪsɪkl] |n. 自行车
+big | [bɪɡ] | adj. 大的
+bike | [baɪk] | n. 自行车
+bird | [bɜːd] | n. 鸟
+birthday | ['bɜːθdeɪ] | n. 生日
+black | [blæk] | n. 黑色
+blackboard | ['blækbɔːd] | n. 黑板
+blue | [bluː] | n. 蓝色 adj. 忧郁的
+body | ['bɒdɪ] | n. 身体，躯体
+book | [bʊk] | n. 1.书，书籍 2.本子，簿子
+both | [bəʊθ] | pron. 两个(都)
+bottle | ['bɒtl] | n. 瓶子
+bowknot | [ˈbauˌnɔt] | n. 蝴蝶结
+box | [bɒks] | n. 箱，盒
+boy | [bɔɪ] |n. 男孩
+bread | [bred] | n. 面包
+breakfast | ['brekfəst] |n. 早餐
+bring | [brɪŋ] | vt. 1.带来，拿来 2.导致，招致
+brother | ['brʌðəʳ] |n. 兄弟
+brown | [braʊn] | adj. 棕色的 n. 棕色
+bus | [bʌs] |n. 公共汽车
+busy | ['bɪzɪ] |adj. 忙的
+but | [bʌt] |conj. 但是 prep. 除了...
+butter | ['bʌtəʳ] |n. 黄油
+butterfly | ['bʌtəflaɪ] | n. 蝴蝶
+buy | [baɪ] | vt. 购买
+buzz | [bʌz] | vi. 发出嗡嗡声
+by | [baɪ] | prep. 1.由，被 2.乘，通过
+cake | [keɪk] | n. 饼,糕；蛋糕
+call | [kɔːl] | vt. 1.喊，叫；大声说出 2. 打电话
+can | [kæn] | vt. 能，能够
+cannot | ['kænɒt]-nət] | vt. 不能，不能够
+cap | [kæp] |n. 帽子
+card | [kɑːd] | n. 卡片
+carrot | ['kærət] | n. 胡萝卜
+case | [keɪs] | n. 1.容器（盒子） 2. 情况 3.事例
+cat | [kæt] | n. 猫；猫科动物
+caterpillar | ['kætəˌpɪl(ə)ʳ] | n. 1.毛毛虫
+chair | [tʃeəʳ] | n. 1.椅子 2.主持人
+cherry | ['tʃerɪ] | n. 樱桃
+chicken | ['tʃɪkɪn] | n. 1.小鸡；鸡 2.鸡肉
+child | [tʃaɪld] | n. 1.儿童，小孩 2.婴儿，胎儿
+Chinese | [tʃaɪ'niːz] | adj. 1.中国的；中国人的 2.汉语的
+cicada | [sɪ'kɑːdə] | n. 蝉，知了
+class | [klɑːs] |n. 班级
+clean | [kliːn] |v. 打扫，收拾，整理 adj. 干净的
+close | [kləʊs] |vt. 关闭
+clothes | [kləʊðz] | n. 衣服，服装
+cloud | [klaʊd] |n. 云
+cloudy | ['klaʊdɪ] | adj. 多云的
+coat | [kəʊt] | n. 外套，上衣
+cold | [kəʊld] |adj. 冷的 n. 冷
+colour | ['kʌləʳ] | n. 1.颜色 2.色彩；彩色
+colourful | ['kʌl(ə)fʊl] | adj. 1.颜色鲜艳的；五彩斑斓的 2.生动的
+come | [kʌm] | vi. 1.来；来到
+cook | [kʊk] |v. 烹饪
+cool | [kuːl] |adj. 酷的 n. 1.冷静，镇定 2.凉爽
+count | [kaʊnt] | n. 计数；数数
+cow | [kaʊ] |n. 奶牛
+crayon | ['kreɪən] | n. 彩色蜡笔(或粉笔、炭笔)
+cucumber | ['kjuːkʌmbəʳ] | n. 黄瓜
+cupboard | ['kʌbəd] | n. 碗柜；橱柜
+cute | [kjuːt] | adj. 1.可爱的，招人喜欢的 2.精巧的；奇妙的
+dance | [dɑːns] | vt. 1.跳(舞) 2.使舞动，使轻快移动 vi. 1.跳舞 2.跳跃；雀跃
+day | [deɪ] | n. 1.白天；昼 2.一天,一日
+desk | [desk] | n. 书桌；课桌
+do | [duː] |v. 做，干
+doctor | ['dɒktəʳ] | n. 医生
+dog | [dɒɡ] | n. 狗；犬类动物
+doll | [dɒl] |n. 玩具
+done | [dʌn] | do的过去分词，常用Well done（干得好）
+door | [dɔːʳ] | n. 门
+down | [daʊn] |adv. 下，向下
+dragon | ['dræɡən] | n. 龙
+dragonfly | ['dræɡənflaɪ] | n. 蜻蜓
+draw | [drɔː] |vt. 画画
+dress | [dres] | n. 1.服装 2.连衣裙
+duck | [dʌk] |n. 鸭子
+ear | [ɪəʳ] | n. 1.耳朵 2.听觉；听力
+easy | ['iːzɪ] | adj. 1.容易的，简单的 2.安逸的，舒适的
+eat | [iːt] |vt. 1.吃，吃东西
+egg | [eɡ] | n. 蛋
+eight | [eɪt] | n. 1.八，2.八个(人或物)
+eleven | [ɪ'lev(ə)n] | n. 1.十一，2.十一个(人或物)
+eraser | [ɪ'reɪzəʳ] | n. 1.橡皮擦 2.黑板擦
+every | ['evrɪ] | adj. 1.每一个的，所有的 2.每隔…的；每…
+eye | [aɪ] |n. 眼睛
+face | [feɪs] | n. 1.脸,面孔 2.面容；表情
+family | ['fæm(ə)lɪ] | n. 家，家庭，家人
+farm | [fɑːm] | n. 农场
+farmer | ['fɑːməʳ] | n. 农民
+fast | [fɑːst] |adj. 快的
+fat | [fæt] |adj. 胖的
+favourite | ['feɪvərɪt] |adj. 特别喜欢的
+feel | [fiːl] |v. 感受，觉得
+firefly | ['faɪəflaɪ] | n. 萤火虫
+fish | [fɪʃ] | n. 1.鱼 2.鱼肉
+five | [faɪv] | n. 1.五，2.五个(人或物)
+fleece | [fliːs] | n. 羊毛 vt. 剪羊毛 
+flower | ['flaʊəʳ] | n. 花，花朵 
+fly | [flaɪ] |v. 飞
+food | [fuːd] | n. 1.食物 2.食品
+foot | [fʊt] | n. 脚,足
+football | ['fʊtbɔːl] | n. 足球(运动) 
+for | [fɔːʳ] | prep. 为，为了
+forest | ['fɒrɪst] | n. 森林
+four | [fɔːʳ] | n. 1.四，2.四个(人或物)
+fresh | [freʃ] | adj. 1.新的，新做的,新到的 2.新颖的,有独创性的
+friend | [frend] | n. 朋友
+from | [frɒm] | prep. 1.从…起，始于 2.从…之中
+fruit | [fruːt] |n. 水果
+game | [ɡeɪm] |n. 游戏
+give | [ɡɪv] |vi. 给
+glue | [ɡluː] | n. 胶水
+go | [ɡəʊ] | vi. 1.去 2.去干某事
+goat | [ɡəʊt] | n. 山羊
+good | [ɡʊd] |adj. 好的
+grape | [ɡreɪp] | n. 葡萄
+grass | [ɡrɑːs] |n. 草
+great | [ɡreɪt] | adj. 棒极的；好极的
+green | [ɡriːn] |n. 绿色
+ground | [ɡraʊnd] |n. 地面
+grow | [ɡrəʊ] | vi. 1.生长 2.增长
+guess | [ɡes] |v. 猜
+hair | [heəʳ] | 1.头发 2.(一根一根的)毛发
+hand | [hænd] | n. 手
+hankie | [ˈhæŋki]|n. 手帕
+happy | ['hæpɪ] | adj. 1.愉快的，高兴的 2.幸福的；幸运的
+hard | [hɑːd] | adv. 努力地 adj. 难的
+has | [hæz] | 有(have的第三人称单数形式)
+hat | [hæt] | n. 帽子(尤指有檐的帽子)
+have | [hæv] |v. 有
+he | [hiː] | pron. 他
+head | [hed] | n. 1.头；头部 2.头脑
+hear | [hɪəʳ] | vt. 1.听见 2.听…
+help | [help] | vt. 1.帮助，扶持 2.对…有帮助，促进
+hen | [hen] | n. 母鸡
+her | [hɜː] | pron. 她的
+here | [hɪəʳ] |adv. 在这边
+high | [haɪ] |adj. 高的
+hike| [haɪk]|v. 徒步旅行
+him | [hɪm] | pron. 他
+his | [hɪz] | pron. 他的
+home | [həʊm] |n. 家
+honey | ['hʌnɪ] | n. 1.蜂蜜；花蜜 2.[用于称呼心爱的人] 亲爱的，宝贝儿
+hop | [hɒp] |v. 1.跳跃 2.单脚跳跃
+horse | [hɔːs] |n. 马
+hot | [hɒt] |adj. 热的
+how | [haʊ] | conj. 1.怎样，如何 2.关于…之事
+in | [ɪn] | adj. 里面的 prep. 在...里面
+ink | [ɪŋk] |n. 墨水
+insect | ['ɪnsekt] | n. 昆虫；虫
+inside | [ˌɪn'saɪd] |prep. 在...里面 n. 内部
+interesting | ['ɪntrɪstɪŋ] | adj. 有趣的
+is | [ɪz] | 是(be的第三人称单数现在时形式)
+it | [ɪt] | pron. 它，这，那
+its | [ɪts] | pron. 它的
+job | [dʒɒb] | n. 工作
+juice | [dʒuːs] | n. 果汁
+jump | [dʒʌmp] | n. 跳，跃
+kite | [kaɪt] |n. 风筝
+lady | ['leɪdɪ] | n. 女士；夫人(尤作礼貌用语)
+ladybird | ['leɪdɪbɜːd] | n. 瓢虫
+lake | [leɪk] | n. 湖
+lamb | [læm] | n. 小羊，羔羊
+late | [leɪt] | adj. 1.迟的 2.晚的
+learn | [lɜːn] | vt. 学，学习；学会
+leg | [leɡ] | n. 腿
+let | [let] | v. 1.让 2.允许
+let's | [lets] | 让我们，let us的简略式
+letter | ['letəʳ] |n. 信，字母
+like | [laɪk] | v. 喜欢 adj. 1.相像的，相似的 2.相同的
+listen | ['lɪs(ə)n] | vi. 听
+little | ['lɪtl] | adj. 1.小的 2.小而可爱的，小巧的
+long | [lɒŋ] | adj. 长的，远的
+look | [lʊk] | v. 看，望，瞧
+lost | [lɒst] |v. 丢掉，失去 adj.迷路的
+love | [lʌv] | vt. 爱，爱好；喜爱，喜欢
+lovely | ['lʌvlɪ] |adj. 可爱的
+lunch | [lʌntʃ] |n. 午餐
+make | [meɪk] | vt. 做，制造
+many | ['menɪ] | pron. 很多人(或物)
+marble | ['mɑːbl] | n. 弹珠，玻璃珠
+me | [miː,mɪ] | pron. 我
+meow | [mɪ'aʊ] |v （猫）喵喵叫
+monkey | ['mʌŋkɪ] |n. 猴子
+more | [mɔːʳ] | pron. 更多的
+mosquito | [mə'skiːtəʊ] | n. 蚊子
+mouth | [maʊð] |n. 嘴巴
+move | [muːv] |vt. 移动
+my | [maɪ] | pron. 我的
+name | [neɪm] |n. 名字
+nature | ['neɪtʃəʳ] | n. 1.大自然；自然界 2.本质，特征，天性
+near | [nɪəʳ] | prep. 1.靠近；临近 2.(质量、尺寸等)相似
+neigh | [neɪ] | vi. (马)嘶
+neither | ['naɪðəʳ] | conj. 也不
+new | [njuː] | adj. 1.新的，新近的 2.崭新的；没用过的
+next | [nekst] | adv. 1.紧接着，然后；2.下一个，3.其次
+nice | [naɪs] | adj. 1.好的；令人愉快的 2.友好的，和善的
+night | [naɪt] | n. 1.夜，夜晚 2.(夜晚的)黑暗
+nine | [naɪn] | n. 1.九，2.九个（人或物）
+nose | [nəʊz] |n. 鼻子
+now | [naʊ] |adv. 现在
+number | ['nʌmbəʳ] |n. 数字
+oink | [ɔɪŋk] | int (猪的)呼噜声
+OK | [oʊˈkeɪ] | exclamation 对；好
+on | [ɒn] | adv. 在...上
+one | [wʌn] | n. 1.一，2.一个(人或物)
+onion | ['ʌnjən] | n. 洋葱
+open | ['əʊp(ə)n] | vt. 1.打开，张开，展开 2.开始；开业
+ouch | [aʊtʃ] | int 哎唷!痛呀!
+our | [aʊəʳ] | pron. 我们的
+out | [aʊt] | adv. 向外 prep. 从...出去
+outside | [ˌaʊt'saɪd] | adj. 1.外面的，外部的 2.外界的，局外的
+over | ['əʊvəʳ] |adv. 超过，超越 prep. 在...上
+page | [peɪdʒ] |n. 页，页面
+park | [pɑːk] |n. 公园 v. 停车
+pea | [piː] | n. 豌豆 
+peach | [piːtʃ] | n. 1.桃子；桃树 2.桃红色
+pen | [pen] | n. 1.(用墨水等书写的)笔 2.钢笔
+pencil | ['pens(ə)l] |n. 铅笔
+pepper | ['pepəʳ] |n. 甜椒，辣椒，胡椒粉
+pest | [pest] |n. 害虫
+picnic | ['pɪknɪk] | n. (自带食物的)郊游野餐
+picture | ['pɪktʃəʳ] |n. 照片 v. 拍照
+pig | [pɪɡ] | n. 1.猪 2.猪肉
+pink | [pɪŋk] | n. 粉红色 adj. 粉红色的
+play | [pleɪ] |vt. 玩
+playground | ['pleɪɡraʊnd] | n. (尤指学校的)操场 
+please | [pliːz] | int. 请 vi. 高兴，欢喜，满意
+pool | [puːl] |n. 水坑，水池，游泳池
+potato | [pə'teɪtəʊ] | n. 马铃薯，土豆
+purple | [ˈpɜːp(ə)l]|n. 紫色 adj.紫色的
+puppy | ['pʌpɪ] | n. 小狗，幼犬
+put | [pʊt] | vt. 置，放
+quack | [kwæk] | vi. (鸭)嘎嘎叫
+rabbit | ['ræbɪt] |n. 兔子
+race | [reɪs] | n. 赛跑，速度竞赛
+rain | [reɪn] |n. 雨 vi. 下雨
+rainy | ['reɪnɪ] | adj. 下雨的，多雨的
+read | [riːd] | n. 阅读
+ready | ['redɪ] | adj. 1.(人)准备好的 2.(东西)预备好的
+red | [red] |n. 红色  adj. 红色的
+ride | [raɪd] |v. 骑，骑马，骑车
+right | [raɪt] | adj. 对的 adv. 马上，立即
+river | ['rɪvəʳ] | n. 1.江，河，水道 2.巨流
+robot | ['rəʊbɒt] | n. 机器人
+room | [ruːm] |n. 房间
+round | [raʊnd] | adv. 绕圈
+rubber | ['rʌbəʳ] | n. 橡皮
+ruler | ['ruːləʳ] | n. 尺子，直尺
+run | [rʌn] | vi. 1.跑，奔跑 2.跑步
+say | [seɪ] |v. 说，讲
+scarf | [skɑːf] | n. 1.领带，领巾 2.围巾
+school | [skuːl] | n. 1.学校 2.上学
+scissors | ['sɪzəz] | n. 剪刀
+season | ['siːz(ə)n] | n. 季节
+seven | ['sev(ə)n] | n. 1.七，2.七个(人或物)
+sharpener| [ˈʃɑːpnə(r)] |n. 卷笔刀
+she | [ʃiː] | pron. 她(也指雌性动物) 
+sheep | [ʃiːp] | n. 1.羊，绵羊 2.胆小鬼；怯懦的人
+shirt | [ʃɜːt] | n. (男式)衬衫
+short | [ʃɔːt] |adj. 短的
+sing | [sɪŋ] | vi. 唱，唱歌
+sit | [sɪt] | vi. 坐，就座
+six | [sɪks] | n. 1.六，2.六个(人或物)
+skip | [skɪp] |v. 跳过，蹦蹦跳跳 
+skirt | [skɜːt] | n. 裙子；衬裙
+sky | [skaɪ] | n. 天，天空
+sleep | [sliːp] | vi. 睡觉，入睡
+small | [smɔːl] |adj. 小的（物体体积小）
+smile | [smaɪl] | v. 微笑 n. 笑容
+snow | [snəʊ] | vi. 下雪 n. 雪
+snowman | ['snəʊmæn] | n. 雪人
+snowy | ['snəʊɪ] | adj. 1.下雪的；积雪的 2.雪白的
+so | [səʊ]sə] | adv. 1.这(那)么 2.这(那)样
+some | [sʌm] | pron. 1.有些；一部分 2.一些，少许
+sometimes | ['sʌmtaɪmz] | adv. 有时候；偶尔
+song | [sɒŋ] | n. 歌，歌曲
+sorry | ['sɒrɪ] | adj. 内疚的，抱歉的 int. 对不起
+spider | ['spaɪdəʳ] | n. 蜘蛛
+spring | [sprɪŋ] | n. 春天；春季
+stand | [stænd] |v. 站，站立
+star | [stɑːʳ] | n. 星星，恒星
+start | [stɑːt] | vi. 开始，启动
+stick | [stɪk] | n. 棒，棍；柴枝
+sticker | ['stɪkəʳ] |n. 背面有胶水的贴纸
+stop | [stɒp] | vt. 停，停止；使中断
+story | ['stɔːrɪ] | n. 故事；小说
+student | ['stjuːd(ə)nt] |n. 学生
+study | ['stʌdɪ] | vt. 1.学习 2.研究，调查
+subject | ['sʌbdʒɪkt] | n. 题目；主题
+summer | ['sʌməʳ] | n. 夏季
+sun | [sʌn] | n. 1.太阳，日 2.日光
+sunny | ['sʌnɪ] | adj. 1.阳光充足的；和煦的 2.乐观的
+sweater | ['swetəʳ] | n. 针织套衫；运动衫
+sweet | [swiːt] | adj. 1.甜的 2.和蔼的；温和的
+swim | [swɪm] | n. 游泳
+swimming | ['swɪmɪŋ] | n. 游泳；游泳运动
+swing | [swɪŋ] |v. 摆动 n. 摇摆
+table | ['teɪbl] | n. 桌子；饭桌，餐桌
+take | [teɪk] |v. 拿，带着
+talk | [tɔːk] |v. 讲话；谈话
+tall | [tɔːl] | adj. 高的，(身材等)高大的
+teach | [tiːtʃ] | vt. 教书，教育
+teddy |  [ˈtedi]|n. 泰迪熊，玩具熊
+ten | [ten] | n. 1.十，2.十个（人或物）
+thank | [θæŋk] | vt. 谢谢
+that | [ðæt] |pron. 那，那个
+the | [ðə] |art. 这，那（特指某个）
+their | [ðeər] | adj. 他们的；她们的
+then | [ðen] |adv. 然后，接下来
+there | [ðeər] |adv. 在那边
+these| [ðiːz] |pron. 这些（this的复数）
+they | [ðeɪ] | pron. 他们；她们
+thin | [θɪn] | adv. 薄；稀疏
+this | [ðɪs] |pron. 这，这个
+those | [ðəʊz] |pron. 那些（that的复数）
+three | [θriː] | n. 1.三，2.三个(人或物)
+time | [taɪm] |n. 时间
+today | [tə'deɪ] | n. 今天
+tomato | [tə'mɑːtəʊ] | n. 番茄，西红柿
+tomorrow | [tə'mɒrəʊ] |n. 明天
+too | [tuː] | adv. 1.也 2.太，过于
+touch | [tʌtʃ] | vt. 触摸，接触
+toy | [tɔɪ] |n. 玩具
+tree | [triː] | n. 树；树木
+turn | [tɜːn] | n. 转向；转弯
+twelve | [twelv] | n. 1.十二，2.十二个(人或物)
+twins | [twɪnz]| n. 双胞胎
+two | [tuː] | n. 1.二，2.两个(人或物)
+umbrella | [ʌm'brelə] | n. 伞，雨伞
+under | ['ʌndəʳ] | adv. 1.在...下面，在...下方
+up | [ʌp] | adv. 向上 vt. 举起；拿起
+us | [ʌs] | pron. 我们
+use | [juːs] |v. 用，使用
+vegetable | ['vedʒtəbl] | n. 蔬菜
+very | ['verɪ] |adv. 很，非常
+walk | [wɔːk] |v. 走路
+want | [wɒnt] |v. 想要，希望
+water | ['wɔːtəʳ] |n. 水
+we | [wiː] | pron. 我们
+welcome | ['welkəm] | vt. 1.欢迎，迎接 2.欣然接受
+well | [wel] | int 好，那好
+what | [wɒt] |pron. 什么，多么
+when | [wen] | conj. 1.当…的时候，在…时候 2.一…就…；每当
+where | [weəʳ] |pron. 哪里 adv. 在哪里
+white | [waɪt] | n. 白色 adj. 白色的
+whose | [huːz] | pron. 谁的，哪个的
+why | [waɪ] | adv. 为什么
+will | [wɪl] |v. 将，将要
+win | [wɪn] | n. (常指竞赛中的)成功，胜利
+wind | [waɪnd] |n. 风
+window | ['wɪndəʊ] | n. 窗，窗户
+windy | ['wɪndɪ] | adj. 1.有风的；多风的 2.受大风吹的
+wing | [wɪŋ] | n. 翅膀
+winter | ['wɪntəʳ] |n. 冬天
+with | [wɪð] | prep. 与…在一起，和，用
+wonderful | ['wʌndəfʊl] | adj. 1.令人高兴的，使人愉快的 2.奇特的；令人惊叹的
+write | [raɪt] | vi. 写；写字
+year | [jɪər,jɜːʳ] | n. 年，年份
+yellow | ['jeləʊ] | n.黄色 adj.黄色的
+yesterday | ['jestədeɪ] | n. 昨天
+you | [juː] | pron. 1.你，你们 2.(泛指)你，任何人
+your | [jɔːʳ] | adj. 你的；你们的
+yummy | ['jʌmɪ] | adj. 好吃的，美味的
+zoo | [zuː] | n. 动物园
