@@ -27,6 +27,23 @@ limiter = Limiter(
     strategy="fixed-window"
 )
 
+# ================= 赛季时间计算 (每月1号凌晨2点重置) =================
+def get_current_period_start():
+    """计算当前排行榜周期的起始时间界限"""
+    now = datetime.now()
+    # 构造本月1号凌晨 02:00:00 的时间阈值
+    threshold = now.replace(day=1, hour=2, minute=0, second=0, microsecond=0)
+    
+    if now >= threshold:
+        # 当前时间已过本月1号凌晨2点，处于【本月赛季】
+        return threshold.strftime("%Y-%m-%d %H:%M")
+    else:
+        # 当前时间在本月1号凌晨2点之前，还在【上个月赛季】
+        # 往前推2天回到上个月，再取上个月的1号凌晨2点
+        prev_month_date = threshold - timedelta(days=2)
+        prev_threshold = prev_month_date.replace(day=1, hour=2, minute=0, second=0, microsecond=0)
+        return prev_threshold.strftime("%Y-%m-%d %H:%M")
+
 # ================= PWA 核心文件 =================
 def init_pwa_files():
     if not os.path.exists('manifest.json'):
@@ -180,7 +197,6 @@ def dashboard():
     user_info = c.fetchone()
     current_grade = user_info['grade'] if user_info and user_info['grade'] else '1a'
 
-    # 【关键修改】取消了 LIMIT 5，将所有历史日期传给前端日历
     c.execute("SELECT score, total, date FROM history WHERE user_id=? ORDER BY date DESC", (user_id,))
     history = [dict(row) for row in c.fetchall()]
     
@@ -255,17 +271,23 @@ def submit():
 def leaderboard():
     conn = get_db_connection()
     c = conn.cursor()
+    
+    # 获取本赛季起始时间（每月1号凌晨2点）
+    period_start = get_current_period_start()
+    
+    # 【核心修改】：通过 WHERE h.date >= ? 动态过滤掉上个月的数据，实现赛季清零！
     query = '''
         SELECT u.name, SUM(h.score) as correct, SUM(h.total) as total, 
                (SUM(h.score) * 100.0 / SUM(h.total)) as accuracy
         FROM history h
         JOIN users u ON h.user_id = u.id
+        WHERE h.date >= ? 
         GROUP BY h.user_id
         HAVING SUM(h.total) >= 100
         ORDER BY accuracy DESC, total DESC
         LIMIT 10
     '''
-    c.execute(query)
+    c.execute(query, (period_start,))
     results = [dict(row) for row in c.fetchall()]
     for r in results:
         r['accuracy'] = round(r['accuracy'], 1)
@@ -298,15 +320,12 @@ def get_words():
             grade = user['grade']
         conn.close()
 
-    # 1. 定义路径
     filename = f'generate_words/words_{grade}.txt'
     default_filename = 'generate_words/words.txt'
     
-    # 2. 【关键修复】：确定最终读取哪个文件
     target_file = filename if os.path.exists(filename) else default_filename
 
     words = []
-    # 3. 【关键修复】：使用 target_file 进行判断和打开
     if os.path.exists(target_file):
         with open(target_file, 'r', encoding='utf-8') as f:
             for line in f:
@@ -334,7 +353,6 @@ def get_words():
                         "translation": translation
                     })
     
-    # 打印一下调试信息（可以在 docker logs 中看到）
     print(f"DEBUG: 正在尝试读取文件: {target_file}, 成功读取单词数: {len(words)}")
     
     return jsonify(words)
