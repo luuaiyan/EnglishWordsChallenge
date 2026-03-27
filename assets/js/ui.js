@@ -306,3 +306,80 @@ function handleSwipe() {
         if (touchEndX < touchStartX) { nextMistake(); } else { prevMistake(); }
     }
 }
+
+/* ======== 测验结算专属界面渲染 ======== */
+let resultChartInstance = null;
+
+function renderResultScreen(correctCount, totalCount, previousHistory) {
+    // 1. 计算本次测验数据
+    const wrongCount = totalCount - correctCount;
+    const accuracy = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
+
+    // 2. 填充HTML界面上的【本次测验核心数据】（这完全符合你要求的：总题数、做对、做错、正确率）
+    document.getElementById('res-total').innerText = totalCount;
+    document.getElementById('res-correct').innerText = correctCount;
+    document.getElementById('res-wrong').innerText = wrongCount;
+    document.getElementById('res-accuracy').innerText = accuracy + '%';
+
+    // 3. 无论如何，先把结算界面显示出来！（防止后面的代码报错导致界面卡死不出来）
+    switchScreen('result-screen');
+
+    // 4. 【安全补丁】：检查 Chart 库是否成功加载
+    const chartContainer = document.getElementById('result-chart-container');
+    if (typeof Chart === 'undefined') {
+        console.warn("Chart.js 未加载(可能是断网)，已隐藏图表，但不影响成绩显示。");
+        if(chartContainer) chartContainer.style.display = 'none';
+        return; // 提前结束，不执行画图代码
+    }
+    
+    if(chartContainer) chartContainer.style.display = 'block';
+
+    // 5. 拼装最新的历史记录（把刚才考完的这次算进去）
+    const now = new Date();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const virtualDate = `2026-${mm}-${dd} 00:00`; 
+
+    const currentResult = { score: correctCount, total: totalCount, date: virtualDate };
+    const updatedHistory = [currentResult, ...(previousHistory || [])];
+
+    // 6. 准备最近 7 次的画图数据
+    const recent7 = updatedHistory.slice(0, 7).reverse();
+    const labels = recent7.map(item => item.date.substring(5, 10));
+    const dataPoints = recent7.map(item => Math.round((item.score / item.total) * 100));
+
+    // 7. 画出【最近7次正确率折线图】
+    const ctx = document.getElementById('resultChart').getContext('2d');
+    if (resultChartInstance) {
+        resultChartInstance.destroy();
+    }
+
+    resultChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '正确率 (%)',
+                data: dataPoints,
+                borderColor: '#10b981', 
+                backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                borderWidth: 2,
+                tension: 0.4,
+                fill: true,
+                pointBackgroundColor: '#ffffff',
+                pointBorderColor: '#10b981',
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, max: 100, ticks: { stepSize: 25 } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+}
