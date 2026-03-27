@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="/assets/images/icons/icon-192.png">
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
+
 <body>
     
     <div id="loading-overlay">正在同步云端数据...</div>
@@ -85,7 +86,7 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span style="font-weight: bold; font-size: 15px; color: var(--text-main);">本次挑战题数</span>
-                    <input type="number" id="question-count" value="20" min="1" max="100" style="width: 70px; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; font-size: 16px; background: var(--bg-color); color: var(--text-main);">
+                    <input type="number" id="question-count" value="50" min="1" max="100" style="width: 70px; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; font-size: 16px; background: var(--bg-color); color: var(--text-main);">
                 </div>
                 <button class="btn-primary" style="margin-top: 20px; width: 100%; border-radius: 12px; font-size: 16px;" onclick="startQuiz('all')">🚀 开始学习</button>
             </div>
@@ -169,12 +170,36 @@
     </div>
 
     <div id="result-screen" class="screen">
-        <div class="app-container" style="justify-content: center;">
-            <div class="center-card">
-                <h1 style="margin: 0; font-size: 32px; color: var(--text-main);">测验结束</h1>
-                <h2 id="final-score" style="margin: 15px 0; color: var(--correct); font-size: 38px;">得分: 0 / 20</h2>
-                <p id="saving-status" style="color: var(--text-muted); font-size: 15px; margin-bottom: 35px;">☁️ 正在保存成绩...</p>
-                <button class="btn-primary" onclick="loadDashboard()">返回主页</button>
+        <div class="app-container" style="justify-content: center; align-items: center; padding: 20px;">
+            <div class="center-card" style="width: 100%; max-width: 500px; padding: 30px 20px;">
+                <h1 style="margin: 0 0 20px 0; font-size: 28px; color: var(--text-main); text-align: center;">🎉 测验完成！</h1>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; background: var(--bg-color); padding: 15px; border-radius: 12px;">
+                    <div style="flex: 1 1 40%; text-align: center;">
+                        <div style="font-size: 13px; color: var(--text-muted);">总题数</div>
+                        <div id="res-total" style="font-size: 24px; font-weight: 900; color: var(--text-main);">0</div>
+                    </div>
+                    <div style="flex: 1 1 40%; text-align: center;">
+                        <div style="font-size: 13px; color: var(--text-muted);">本次正确率</div>
+                        <div id="res-accuracy" style="font-size: 24px; font-weight: 900; color: var(--primary);">0%</div>
+                    </div>
+                    <div style="flex: 1 1 40%; text-align: center;">
+                        <div style="font-size: 13px; color: var(--text-muted);">做对</div>
+                        <div id="res-correct" style="font-size: 24px; font-weight: 900; color: var(--correct);">0</div>
+                    </div>
+                    <div style="flex: 1 1 40%; text-align: center;">
+                        <div style="font-size: 13px; color: var(--text-muted);">做错</div>
+                        <div id="res-wrong" style="font-size: 24px; font-weight: 900; color: var(--wrong);">0</div>
+                    </div>
+                </div>
+
+                <div style="text-align: left; margin-bottom: 10px; font-size: 14px; font-weight: bold; color: var(--text-main);">📈 最近7次正确率趋势</div>
+                <div id="result-chart-container" style="position: relative; height: 180px; width: 100%; margin-bottom: 25px;">
+                    <canvas id="resultChart"></canvas>
+                </div>
+
+                <p id="saving-status" style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px; text-align: center;">☁️ 成绩已安全保存至云端</p>
+                <button class="btn-primary" onclick="loadDashboard()" style="width: 100%; border-radius: 12px;">返回</button>
             </div>
         </div>
     </div>
@@ -195,6 +220,7 @@
         </div>
     </div>
 
+    <script src="/assets/lib/chart.js"></script>
     <script src="/assets/js/pwa.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/api.js"></script>
