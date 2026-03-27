@@ -191,26 +191,40 @@ function checkAnswer(btn, sel, correct) {
 }
 
 async function submitResult() {
-    document.getElementById('final-score').innerText = `得分: ${score} / ${currentQuestions.length}`;
-    switchScreen('result-screen');
+    const total = currentQuestions.length;
+    const correct = score;
     
+    // 1. 调用我们在 ui.js 里写好的高级结算面板渲染函数
+    // 它会自动算出正确率，画出近期折线图，并把画面平滑切换到 result-screen
+    if (typeof renderResultScreen === 'function') {
+        renderResultScreen(correct, total, typeof historyRecords !== 'undefined' ? historyRecords : []);
+    } else {
+        // 万一 ui.js 没加载成功的兜底方案
+        switchScreen('result-screen');
+    }
+    
+    document.getElementById('saving-status').innerText = "☁️ 正在保存成绩...";
+
     try {
         const res = await fetch('/api/submit', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                score, 
-                total: currentQuestions.length, 
+                score: correct, 
+                total: total, 
                 wrong_answers: currentWrongAnswers, 
                 correct_answers: currentCorrectAnswers
             })
         });
         
         if (res.ok) {
-            document.getElementById('saving-status').innerText = "✅ 数据已同步";
-            await loadDashboard(); 
+            // 2. 【核心改变】：提交成功后，只更新提示文字，绝对不自动跳转！
+            // 画面会死死停在结算页，让小朋友好好欣赏自己画出的上升曲线
+            document.getElementById('saving-status').innerText = "✅ 成绩已保存，请点击下方按钮返回";
+        } else {
+            document.getElementById('saving-status').innerText = "❌ 服务器开了小差，保存失败";
         }
     } catch (e) {
-        document.getElementById('saving-status').innerText = "❌ 同步失败，请刷新";
+        document.getElementById('saving-status').innerText = "📶 似乎断网了，请检查网络连接";
     }
 }
