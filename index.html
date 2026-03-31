@@ -50,15 +50,22 @@
             </div>
             
             <div class="dashboard-module">
-                <div class="module-title">📊 数据概览</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    <div class="module-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">📊 数据概览</div>
+                    <select id="time-range-select" onchange="updateDashboardStats()" style="padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border-color); font-size: 13px; background: var(--bg-color); color: var(--text-main); outline: none; cursor: pointer;">
+                        <option value="7" selected>近 7 天</option>
+                        <option value="15">近 15 天</option>
+                        <option value="30">近 30 天</option>
+                    </select>
+                </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-value" id="my-total-qs">0</div>
-                        <div class="stat-label">累计答题数</div>
+                        <div class="stat-label">筛选期答题数</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value" id="my-accuracy">0%</div>
-                        <div class="stat-label">平均正确率</div>
+                        <div class="stat-label">筛选期正确率</div>
                     </div>
                 </div>
             </div>
@@ -139,16 +146,17 @@
                 <div id="daily-stats-display">
                     👆 点击日期即可查看当天打卡成绩
                 </div>
-            </div>
-            
-            <div style="display: flex; gap: 15px; margin-bottom: 30px; width: 100%;">
+            </div> <div class="dashboard-module" id="chart-module" style="display: none; margin-bottom: 25px;">
+                <div class="module-title">📈 正确率趋势 (按日平均)</div>
+                <div id="chart-container" style="position: relative; height: 160px; width: 100%;">
+                    <canvas id="accuracyChart"></canvas>
+                </div>
+            </div> <div style="display: flex; gap: 15px; margin-bottom: 30px; width: 100%;">
                 <button class="btn-secondary" style="flex: 1; color: var(--text-muted); border-color: var(--border-color);" onclick="logout()">退出登录</button>
                 <button class="btn-secondary" style="flex: 1; color: var(--wrong); border-color: rgba(239, 68, 68, 0.4);" onclick="clearRecord()">清空记录</button>
             </div>
-        </div>
-    </div>
-
-    <div id="quiz-screen" class="screen" style="padding: 0;">
+            
+        </div> </div> <div id="quiz-screen" class="screen" style="padding: 0;">
         <div class="app-container" style="padding: 0; max-width: 800px; height: 100vh; height: 100dvh; display: flex; flex-direction: column;">
             <div style="flex: 1; display: flex; flex-direction: column; padding: 25px 20px 40px 20px; background: var(--bg-color);">
                 
