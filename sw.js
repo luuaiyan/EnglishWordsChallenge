@@ -1,4 +1,4 @@
-const CACHE_NAME = 'english-app-v1.05';
+const CACHE_NAME = 'english-app-v1.06';
 
 // 1. 安装阶段：立即接管控制权
 self.addEventListener('install', (event) => { 
