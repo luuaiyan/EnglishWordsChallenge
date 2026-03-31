@@ -37,8 +37,17 @@ async function loadDashboard() {
         const data = await res.json();
         
         document.getElementById('display-name').innerText = data.name;
-        document.getElementById('my-total-qs').innerText = data.stats.total;
-        document.getElementById('my-accuracy').innerText = data.stats.accuracy + '%';
+        
+        // ==========================================
+        // 🌟 核心修改 1：对接主页的高级看板与图表
+        // ==========================================
+        historyRecords = data.history;      // 给原有的日历组件使用
+        globalHistoryData = data.history;   // 给新加的图表和下拉菜单使用
+        
+        // 呼叫更新函数，它会自动读取下拉菜单（默认7天），计算数字并画图
+        if (typeof updateDashboardStats === 'function') {
+            updateDashboardStats();
+        }
         
         if(data.grade) { document.getElementById('grade-select').value = data.grade; }
 
@@ -48,7 +57,6 @@ async function loadDashboard() {
         const rRes = await fetch('/api/leaderboard');
         renderLeaderboard(await rRes.json(), data.name);
         
-        historyRecords = data.history;
         renderCalendar();
 
     } catch (e) { console.error(e); }
@@ -82,27 +90,41 @@ async function clearRecord() {
     await loadDashboard();
 }
 
+// ==========================================
+// 🌟 核心修改 2：拦截提交跳转，显示高级结算图表
+// ==========================================
 async function submitResult() {
-    document.getElementById('final-score').innerText = `得分: ${score} / ${currentQuestions.length}`;
-    switchScreen('result-screen');
+    const total = currentQuestions.length;
+    const correct = score;
     
+    // 调用 ui.js 里的专属结算面板，自动算出正确率并画出近期图表
+    if (typeof renderResultScreen === 'function') {
+        renderResultScreen(correct, total, typeof historyRecords !== 'undefined' ? historyRecords : []);
+    } else {
+        switchScreen('result-screen');
+    }
+    
+    document.getElementById('saving-status').innerText = "☁️ 正在保存成绩...";
+
     try {
         const res = await fetch('/api/submit', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                score, 
-                total: currentQuestions.length, 
+                score: correct, 
+                total: total, 
                 wrong_answers: currentWrongAnswers, 
                 correct_answers: currentCorrectAnswers
             })
         });
         
         if (res.ok) {
-            document.getElementById('saving-status').innerText = "✅ 数据已同步";
-            await loadDashboard(); 
+            // 【关键】：这里去掉了 await loadDashboard()，所以它绝对不会强行跳回主页了！
+            document.getElementById('saving-status').innerText = "✅ 成绩已安全保存至云端，请点击下方按钮返回";
+        } else {
+            document.getElementById('saving-status').innerText = "❌ 服务器开了小差，保存失败";
         }
     } catch (e) {
-        document.getElementById('saving-status').innerText = "❌ 同步失败，请刷新";
+        document.getElementById('saving-status').innerText = "📶 似乎断网了，请检查网络连接";
     }
 }
