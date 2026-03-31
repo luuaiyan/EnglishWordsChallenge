@@ -383,3 +383,123 @@ function renderResultScreen(correctCount, totalCount, previousHistory) {
         }
     });
 }
+
+/* ======== 主页数据看板：下拉筛选与聚合图表 ======== */
+let globalHistoryData = []; // 存下所有的历史记录，供下拉菜单反复筛选
+let dashboardChartInstance = null; // 主页专属图表实例，防止和结算页图表冲突
+
+// 1. 当下拉菜单切换时触发的计算函数
+function updateDashboardStats() {
+    if (!globalHistoryData || globalHistoryData.length === 0) {
+        document.getElementById('my-total-qs').innerText = '0';
+        document.getElementById('my-accuracy').innerText = '0%';
+        renderDashboardChart([]);
+        return;
+    }
+    
+    // 获取选中的天数（7, 15, 或 30）
+    const selectEl = document.getElementById('time-range-select');
+    const days = selectEl ? parseInt(selectEl.value) : 7;
+    
+    // 计算时间截点 (几天前的凌晨 00:00:00)
+    const now = new Date();
+    const cutoff = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+    cutoff.setHours(0, 0, 0, 0);
+    
+    // 过滤出规定时间范围内的历史记录
+    const filteredHistory = globalHistoryData.filter(item => {
+        const itemDate = new Date(item.date.replace(/-/g, '/')); 
+        return itemDate >= cutoff;
+    });
+    
+    // 重新计算这段时间内的累计答题数和正确率
+    let totalQs = 0;
+    let correctQs = 0;
+    filteredHistory.forEach(item => {
+        totalQs += item.total;
+        correctQs += item.score;
+    });
+    
+    const accuracy = totalQs > 0 ? Math.round((correctQs / totalQs) * 100) : 0;
+    
+    // 更新主页界面上的两个大数字
+    document.getElementById('my-total-qs').innerText = totalQs;
+    document.getElementById('my-accuracy').innerText = accuracy + '%';
+    
+    // 带着筛选后的数据去画主页的图表
+    renderDashboardChart(filteredHistory);
+}
+
+// 2. 主页专属的高级画图函数（支持按日合并计算平均分）
+function renderDashboardChart(filteredHistory) {
+    const chartModule = document.getElementById('chart-module');
+    if (!chartModule) return; // 如果页面上没有图表容器，直接退出
+    
+    if (!filteredHistory || filteredHistory.length === 0) {
+        chartModule.style.display = 'none';
+        return;
+    }
+    chartModule.style.display = 'block';
+
+    // 【安全护盾】：防止离线没加载出 Chart 库导致卡死
+    if (typeof Chart === 'undefined') {
+        console.warn("Chart.js 未加载，已隐藏主页图表");
+        chartModule.style.display = 'none';
+        return; 
+    }
+
+    // 【核心算法】：把同一天的多次成绩合并起来，算当天的平均正确率
+    const dailyData = {};
+    filteredHistory.forEach(item => {
+        const dateStr = item.date.substring(5, 10); // 截取 "MM-DD"
+        if (!dailyData[dateStr]) {
+            dailyData[dateStr] = { score: 0, total: 0 };
+        }
+        dailyData[dateStr].score += item.score;
+        dailyData[dateStr].total += item.total;
+    });
+
+    // 把日期抽出来并按时间先后顺序从小到大排序
+    const labels = Object.keys(dailyData).sort();
+    
+    // 算出每一天的最终平均正确率
+    const dataPoints = labels.map(date => {
+        return Math.round((dailyData[date].score / dailyData[date].total) * 100);
+    });
+
+    // 销毁旧图表
+    const ctx = document.getElementById('accuracyChart').getContext('2d');
+    if (dashboardChartInstance) {
+        dashboardChartInstance.destroy();
+    }
+
+    // 绘制新图表
+    dashboardChartInstance = new Chart(ctx, {
+        type: 'line', 
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '日均正确率 (%)',
+                data: dataPoints,
+                borderColor: '#4f46e5', // 主题色
+                backgroundColor: 'rgba(79, 70, 229, 0.15)', 
+                borderWidth: 2,
+                tension: 0.3, // 稍稍硬一点的折线质感
+                fill: true,
+                pointBackgroundColor: '#ffffff',
+                pointBorderColor: '#4f46e5',
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, max: 100, ticks: { stepSize: 20 } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+}
